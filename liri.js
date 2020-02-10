@@ -27,12 +27,13 @@ if (term === "") {
     });
 
 } else if (search === "spotify-this-song") {
+    console.log("=================================================")
     console.log("Searching for a song on Spotify");
+    console.log("=================================================")
     spotify.search({ type: 'track', query: term }, function (err, data) {
         if (err) {
             return console.log('Error occurred: ' + err);
         }
-        console.log("=================================================")
         console.log("Artist: ", data.tracks.items[0].artists[0].name);
         console.log("=================================================")
         console.log("Song: ", data.tracks.items[0].name);
